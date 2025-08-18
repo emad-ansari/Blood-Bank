@@ -4,13 +4,13 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env  ("DATABASE_URL")
+  url      = env ("DATABASE_URL")
 }
 
 model User {
   id        String   @id @default(cuid())
   clerkId   String   @unique
-  role      Role
+  role      String   @unique @default("Donor")
   firstname String
   lastname  String
   email     String
@@ -35,11 +35,7 @@ model Donor {
   donations        Donation[]
 }
 
-enum Role {
-  ADMIN
-  STAFF_ADMIN
-  USER
-}
+
 
 model BloodBank {
   id                    String   @id @default(cuid())

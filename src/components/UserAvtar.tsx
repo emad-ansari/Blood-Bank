@@ -28,7 +28,7 @@ export const UserAvtar = async () => {
 		<div className="flex space-x-8 items-center">
 			<Link
 				href={
-					user && user.role === "donor"
+					user && user.role === "Donor "
 						? "/dashboard/donor/profile"
 						: "/blood_bank_dashboard"
 				}

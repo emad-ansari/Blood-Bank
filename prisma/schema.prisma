@@ -4,24 +4,23 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env  ("DATABASE_URL")
 }
 
 model User {
   id        String   @id @default(cuid())
   clerkId   String   @unique
-  role      String   @default("donor")
+  role      Role
   firstname String
   lastname  String
   email     String
-  age       Int
-  phone     Int
+  age       String
+  phone     String
   state     String
   district  String
   address   String
-  pincode   Int
+  pincode   String
   donor     Donor?  @relation
-  staff     BloodBankStaff?  @relation
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -36,18 +35,9 @@ model Donor {
   donations        Donation[]
 }
 
-
-model BloodBankStaff {
-  id          String   @id @default(cuid())
-  staffRole   StaffRole  // this will tell us what role the staff member has
-  bloodBankId   String
-  bloodBank  BloodBank @relation(fields: [bloodBankId], references: [id])
-  userId    String   @unique // Unique because a donor corresponds to only one user
-  user      User     @relation(fields: [userId], references: [id])
-}
-
-enum StaffRole {
+enum Role {
   ADMIN
+  STAFF_ADMIN
   USER
 }
 
@@ -57,7 +47,7 @@ model BloodBank {
   email                 String
   parentHospitalName    String
   category              BloodBankCategory
-  contactNo             Int
+  contactNo             String
   firstRegistrationDate DateTime
   fromDate              DateTime
   toDate                DateTime
@@ -65,7 +55,6 @@ model BloodBank {
   state                 String
   district              String
   city                  String
-  staff                 BloodBankStaff[]
   createdAt             DateTime   @default(now())
   updatedAt             DateTime   @updatedAt
 }

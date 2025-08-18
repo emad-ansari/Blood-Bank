@@ -21,7 +21,6 @@ export async function GET(req: NextRequest) {
 				lastname: true,
 				phone: true,
 				address: true,
-				DateOfBirth: true,
 				donor: {
 					select: {
 						bloodType: true,
@@ -37,11 +36,11 @@ export async function GET(req: NextRequest) {
 			);
 		}
 
-		const date = new Date (donor.DateOfBirth);
-		const formattedDateOfBirth  = format(date, "dd-MM-yyyy");
-		const formattedDonor = {...donor, DateOfBirth: formattedDateOfBirth};
+		// const date = new Date (donor.DateOfBirth);
+		// const formattedDateOfBirth  = format(date, "dd-MM-yyyy");
+		// const formattedDonor = {...donor, DateOfBirth: formattedDateOfBirth};
 
-		return NextResponse.json(formattedDonor, { status: 200 });
+		return NextResponse.json(donor, { status: 200 });
 	} catch (error) {
 		console.error(error);
 		return NextResponse.json(

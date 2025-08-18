@@ -176,7 +176,6 @@ const SignUpForm = () => {
 							</div>
 						</div>
 
-						{/* Submit Button */}
 						<Button
 							className="w-full sm:w-auto"
 							onClick={() => savePersonalInfo()}

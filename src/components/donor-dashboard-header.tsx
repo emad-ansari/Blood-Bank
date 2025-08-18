@@ -8,7 +8,6 @@ export function Header() {
 		<header className="border-b">
 			<div className="flex h-16 items-center px-6">
 				<Button variant="ghost" className="text-PRIMARY hover:text-foreground" onClick = {() => redirect('/')}>
-					<ChevronLeft className="h-5 w-5" />
 					<span className="">Go Back</span>
 				</Button>
 

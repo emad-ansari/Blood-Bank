@@ -6,6 +6,38 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
+
+export interface BloodBankInfo {
+  blood_bank_details: BloodBankDetails;
+  administrator_details: AdministratorDetails;
+}
+export interface BloodBankDetails {
+  name: string;
+  parentHospitalName: string;
+  category: string;
+  contactNo: string;
+  email: string;
+  firstRegistrationDate: string;
+  licenseNo: string;
+  fromDate: string;
+  toDate: string;
+  state: string;
+  district: string;
+  city: string;
+}
+
+export interface AdministratorDetails {
+  firstname: string;
+  lastname: string;
+  age: string;
+  email: string;
+  phone: string;
+  state: string;
+  district: string;
+  address: string;
+  pincode: string;
+}
+
 export const STATES = [
   "Andhra Pradesh",
   "Arunachal Pradesh",

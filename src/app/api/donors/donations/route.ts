@@ -7,7 +7,7 @@ export async function GET(req: NextRequest) {
     const userId = authenticateUser(req);
 
     const donations = await prisma.donation.findMany({
-      where: { donor: { clerkId: userId } },
+      where: { donor: { userId: userId } },
       orderBy: { date: "desc" },
     });
 

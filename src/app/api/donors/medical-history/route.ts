@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
       data: {
         conditions,
         medications,
-        donor: { connect: { clerkId: userId } },
+        donor: { connect: { userId: userId } },
       },
     });
 

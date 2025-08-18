@@ -5,18 +5,18 @@ import { auth } from "@clerk/nextjs/server";
 // save medical history of donor.
 
 export async function POST(
-	req: NextRequest,
-	{ params }: { params: { donorId: string } }
+	req: NextRequest
 ) {
 	try {
         const userId = await auth();
         const { conditions, medications } = await req.json();
+        const donorId = req.nextUrl.pathname.split("/").pop();
 
         if (!userId) {
             return new NextResponse ("UnAuthenticated",  { status: 401 });
         }       
 
-        if (!params.donorId) {
+        if (!donorId) {
             return new NextResponse ("Donor Id is required!",  { status: 400 });
         }
 
@@ -31,7 +31,7 @@ export async function POST(
             data: {
                 conditions,
                 medications,
-                donorId: params.donorId
+                donorId: donorId
             }
         });
         return NextResponse.json(medicalHistory,  { status: 201 });

@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
       data: {
         date: new Date(date),
         location,
-        donor: { connect: { clerkId: userId } },
+        donor: { connect: { userId: userId } },
       },
     });
 
@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
     const userId = authenticateUser(req);
 
     const appointments = await prisma.appointment.findMany({
-      where: { donor: { clerkId: userId } },
+      where: { donor: { userId: userId } },
     });
 
     return NextResponse.json(appointments, { status: 200 });

@@ -3,20 +3,20 @@ import { BookPlus, HandHeart } from "lucide-react";
 import { useState } from "react";
 
 const ProgressCard = () => {
-	const [donorRegisterd, setDonorRegistered] = useState<number>(1000);
-	const [bloodUnitCollected, setBloodUnitCollected] = useState<number>(1500);
+	// const [donorRegisterd, setDonorRegistered] = useState<number>(1000);
+	// const [bloodUnitCollected, setBloodUnitCollected] = useState<number>(1500);
 
 	const progresses = [
 		{
 			href: "1",
 			title: "Donors Registered",
-			count: donorRegisterd,
+			count: 1000,
 			icon: <BookPlus className="w-6 h-6" />,
 		},
 		{
 			href: "2",
 			title: "Blood Units Collected",
-			count: bloodUnitCollected,
+			count: 1500,
 			icon: <HandHeart strokeWidth={2.5} />,
 		},
 	];
@@ -36,7 +36,7 @@ const ProgressCard = () => {
 	// 		}
 	// 	}
 	// }, []);
-    console.log(donorRegisterd, bloodUnitCollected);
+    // console.log(donorRegisterd, bloodUnitCollected);
 
 	return (
 		<div className="p-8 ">

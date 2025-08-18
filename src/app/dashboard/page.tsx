@@ -1,10 +1,10 @@
 "use client";
 
 // import { useEffect } from "react";
-import { useUser } from "@clerk/nextjs";
+// import { useUser } from "@clerk/nextjs";
 
 export default function Dashboard() {
-  const { user, isLoaded } = useUser(); // `isLoaded` ensures user data is fully loaded
+  // const { user, isLoaded } = useUser(); // `isLoaded` ensures user data is fully loaded
 
   // useEffect(() => {
   //   const registerDonor = async () => {

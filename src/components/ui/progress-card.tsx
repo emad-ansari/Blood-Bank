@@ -1,6 +1,6 @@
 "use client";
 import { BookPlus, HandHeart } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const ProgressCard = () => {
 	const [donorRegisterd, setDonorRegistered] = useState<number>(1000);

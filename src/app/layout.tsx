@@ -5,7 +5,7 @@ import {
 import localFont from "next/font/local";
 import { Mulish } from 'next/font/google';
 import "./globals.css";
-import NavBar from "@/components/nav-bar";
+// import NavBar from "@/components/nav-bar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

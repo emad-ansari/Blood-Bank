@@ -40,6 +40,7 @@ const BloodBankFinder = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  console.log(userLocation)
   const handleGetLocation = () => {
     setLoading(true);
     setError("");

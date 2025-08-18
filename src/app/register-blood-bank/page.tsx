@@ -79,23 +79,23 @@ export default function RegisterBloodBank() {
 		});
 	};
 
-	const handleDistrictChange = (name: string, value: String) => {
+	const handleDistrictChange = (name: string, value: string) => {
 		if (name === "blood_bank") {
-			setFormData((prev) => {
+			setFormData((prevState) => {
 				return {
-					...prev,
+					...prevState,
 					blood_bank_details: {
-						...prev.blood_bank_details,
+						...prevState.blood_bank_details,
 						district: value,
 					},
 				};
 			});
 		} else if (name === "administrator") {
-			setFormData((prev) => {
+			setFormData((prevState) => {
 				return {
-					...prev,
+					...prevState,
 					administrator_details: {
-						...prev.administrator_details,
+						...prevState.administrator_details,
 						district: value,
 					},
 				};

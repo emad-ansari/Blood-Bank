@@ -1,5 +1,5 @@
 "use client"
-import { Bell, ChevronLeft, Settings } from "lucide-react";
+import { Bell, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { redirect } from "next/navigation";
 
